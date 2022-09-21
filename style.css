@@ -1,0 +1,214 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+body{
+    background-color: #fcfffc;
+}
+
+/* main container */
+.mainContainer{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* input start */
+.inputAcceptDiv{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border: solid 1px #081c15;
+    width: clamp(150px, 100%, 450px);
+    margin: auto;
+}
+
+
+form{
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    width: clamp(150px, 100%, 400px);
+    font-size: 1rem;
+    
+}
+
+h1{
+    user-select: none;
+}
+
+label{
+    user-select: none;
+}
+
+.toggle{
+    position: relative;
+    width: 40px;
+    height: 20px;
+    display: inline-block;
+}
+
+/* hide default checkbox */
+#isRead{
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+/* slider */
+.slider{
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    transition: all .2s ease-in;
+    background-color:#081c15;
+    border-radius: 1rem;
+}
+
+.slider:before{
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    top: 0;
+    bottom: 0;
+    margin: auto ;
+    display: inline-block;
+    background-color: white;
+    border: solid 1px white;
+    border-radius: 1rem;
+    transition: all .2s ease;
+}
+
+#isRead:checked + .slider:before{
+    transform: translateX(20px);
+}
+
+#isRead:checked + .slider{
+    background-color: rgb(132, 202, 27);
+}
+
+input{
+    margin-bottom:1rem;
+    padding: 3px 5px;
+}
+
+input[type="text"],input[type="number"]{
+    border-width: 0px 0px 1px 0px;
+    margin-top: 5px;
+    outline:none;
+}
+
+form>div:last-child{
+    margin: 1rem 0;
+}
+
+form button{
+    padding:.4rem;
+    background-color: inherit;
+    border: solid .5px black;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+form button:hover{
+    background-color: rgb(218, 218, 218);
+}
+/* input ends */
+
+.BookCard{
+    flex: 1;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-evenly;
+    min-width: 500px;
+}
+
+.cardConotainer{
+    background-color: white;
+    max-width: 200px;
+    min-width: 200px;
+    height: fit-content;
+    padding: 8px;
+    border-radius: .7rem;
+    border: solid 1px black;
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    gap: 5px;
+
+}
+
+.deleteButton{
+    width: fit-content;
+    height: 15px;
+
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: end;
+}
+
+.line{
+    border-radius: .5rem;
+    cursor: pointer;
+    width: 20px;
+    height: 3px;
+    background-color: black;
+}
+
+.deleteLineOne{
+    transform: rotate(45deg) translateY(2px);
+    
+}
+
+.deleteLineTwo{
+    transform: rotate(-45deg) translateY(-2px);
+}
+
+.title{
+    font-size: 1rem;
+    word-wrap: break-word;
+    text-transform: capitalize;
+}
+
+.author,.totalPageNumber{
+    font-size: .8rem;
+}
+
+.title,.author,.totalPageNumber{
+    word-wrap: break-word;
+}
+
+.finished,.notFinished{
+    padding: 5px;
+    cursor: pointer;
+    border: solid 1px black;
+    border-radius: 10px;
+}
+
+.notFinished{
+    background-color: inherit;
+}
+
+.notFinished:hover{
+    background-color:azure;
+}
+
+.finished{
+    background-color: #74c69d;
+}
+
+.finished:hover{
+    background-color:#6bb892 ;
+}
+
